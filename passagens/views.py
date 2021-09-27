@@ -1,5 +1,8 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .forms import PassagemForms
 def index(request):
-    return render(request, 'index.html')
+    form = PassagemForms()
+    context = {
+        'form':form
+    }
+    return render(request, 'index.html', context)
